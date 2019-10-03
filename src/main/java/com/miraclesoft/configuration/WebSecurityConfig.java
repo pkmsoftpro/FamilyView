@@ -1,5 +1,25 @@
 package com.miraclesoft.configuration;
 
+/*
+ * {
+    "uid": 2,
+    "username": "test",
+    "fname": "test",
+    "lname": "test",
+    "mode": "dev",
+    "password": "test",
+    "role": "dev"
+}
+
+{
+	"username" : "admin"
+	"password" : "admin"
+}
+
+	Content-Type: application/json
+	Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWppdiIsImV4cCI6MTU3MDEzMjQwMSwiaWF0IjoxNTcwMTE0NDAxfQ.dl3O-RS5jcZqQVyAjzP8naqfUvZVLXjBl91U9TC9S4lV-gq8YycfNtYp7sjhH-mNv_r-x6u1glEIdQzYtcgy9Q
+ */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -48,7 +68,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// We don't need CSRF for this example
 		httpSecurity.csrf().disable()
 		// dont authenticate this particular request
-		.authorizeRequests().antMatchers("/authenticate","/app/user","/app/adduser","/app/userid","/user").permitAll().
+				.authorizeRequests()
+				.antMatchers("/authenticate","/app/user","/app/adduser","/app/userid","/user").permitAll().
 		// all other requests need to be authenticated
 		anyRequest().authenticated().and().
 		// make sure we use stateless session; session won't be used to

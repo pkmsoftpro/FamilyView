@@ -8,6 +8,17 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+
+/*
+ * {
+	"username": "test",
+	"password": "test",
+	"fname": "test",
+	"lname": "test",
+	"mode":  "dev",
+	"role":  "dev"
+}
+ */
 @Entity
 @Table(name="USER")
 public class User {
