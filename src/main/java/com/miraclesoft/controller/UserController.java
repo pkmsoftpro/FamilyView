@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.miraclesoft.entity.User;
 import com.miraclesoft.entity.UserDetail;
+import com.miraclesoft.service.UseService;
 import com.miraclesoft.service.UserService;
 
 @RestController
@@ -21,6 +23,9 @@ public class UserController {
 
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	UseService useService;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/userid/{id}")
 	public UserDetail getUserWithId(@Min(1) @PathVariable Integer id) {
@@ -32,5 +37,11 @@ public class UserController {
 	@ResponseBody
 	public UserDetail addNewUser(@Valid @RequestBody UserDetail user) {
 		return this.userService.addUser(user);
+	}
+	
+	@RequestMapping(method=RequestMethod.POST, value="/user")
+	@ResponseBody
+	public User addUser(@RequestBody User user) {
+		return this.useService.save(user);
 	}
 }
