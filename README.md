@@ -134,7 +134,7 @@ https://medium.com/@itsromiljain/dockerize-rest-spring-boot-application-with-hib
 https://github.com/itsromiljain/gradle-springboot/tree/master/src/main/resources
 
 
-$ docker run -p 3306:3306 --name=docker-mysql --env="MYSQL_ROOT_PASSWORD=root" --env="MYSQL_PASSWORD=root" --env="MYSQL_DATABASE=test" mysql
+$ docker run -p 3306:3306 --name=docker-mysql --env="MYSQL_ROOT_PASSWORD=root" --env="MYSQL_PASSWORD=root" --env="MYSQL_DATABASE=test" mysql  
 $ docker run -t --name familyview --link docker-mysql:mysql -p 8082:8081 familyview
 
 
