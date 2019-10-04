@@ -9,7 +9,7 @@
         <Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </Console>
-        <File name="FileAppender" fileName="logs/workshop.log" follow="true">
+        <File name="FileAppender" fileName="logs/workshop_console.log" follow="true">
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </File>
     </Appenders>
@@ -25,7 +25,7 @@
         </Root>
     </Loggers>
     <!-- Rolling File Appender -->
-	<RollingFile name="FileAppender" fileName="logs/workshop.log" 
+	<RollingFile name="FileAppender" fileName="logs/log4j2-demo.log" 
              filePattern="logs/log4j2-demo-%d{yyyy-MM-dd}-%i.log">
     	<PatternLayout>
         	<Pattern>${LOG_PATTERN}</Pattern>
